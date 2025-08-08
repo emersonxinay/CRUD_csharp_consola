@@ -51,8 +51,125 @@ dotnet run
 - `MetodosCRUD.cs`: Métodos para crear, listar, actualizar y eliminar productos.
 - `Menu.cs`: Lógica de presentación del menú en consola.
 
+## Ejemplo sin clases ni metodos:
+```cs
+// Program.cs
 
-## Ejemplo de codigo monolito:
+        // Lista de productos representados como diccionarios
+        List<Dictionary<string, object>> productos = new List<Dictionary<string, object>>();
+        int contadorId = 1;
+
+        while (true)
+        {
+            Console.WriteLine("===== CRUD de Productos (sin clases ni métodos) =====");
+            Console.WriteLine("1. Crear producto");
+            Console.WriteLine("2. Listar productos");
+            Console.WriteLine("3. Actualizar producto");
+            Console.WriteLine("4. Eliminar producto");
+            Console.WriteLine("5. Salir");
+            Console.Write("Seleccione una opción: ");
+            string opcion = Console.ReadLine()!;
+            Console.WriteLine();
+
+            if (opcion == "1")
+            {
+                Console.Write("Nombre del producto: ");
+                string nombre = Console.ReadLine()!;
+
+                Console.Write("Precio del producto: ");
+                decimal precio = Convert.ToDecimal(Console.ReadLine()!);
+
+                var producto = new Dictionary<string, object>();
+                producto["Id"] = contadorId++;
+                producto["Nombre"] = nombre;
+                producto["Precio"] = precio;
+
+                productos.Add(producto);
+
+                Console.WriteLine("Producto agregado.\n");
+            }
+            else if (opcion == "2")
+            {
+                if (productos.Count == 0)
+                {
+                    Console.WriteLine("No hay productos.\n");
+                    continue;
+                }
+
+                Console.WriteLine("Lista de productos:");
+                foreach (var producto in productos)
+                {
+                    Console.WriteLine($"ID: {producto["Id"]} - {producto["Nombre"]} - ${((decimal)producto["Precio"]):F2}");
+                }
+                Console.WriteLine();
+            }
+            else if (opcion == "3")
+            {
+                Console.Write("Ingrese el ID del producto a actualizar: ");
+                int idActualizar = Convert.ToInt32(Console.ReadLine());
+
+                bool encontrado = false;
+                foreach (var producto in productos)
+                {
+                    if ((int)producto["Id"] == idActualizar)
+                    {
+                        Console.Write("Nuevo nombre: ");
+                        producto["Nombre"] = Console.ReadLine()!;
+
+                        Console.Write("Nuevo precio: ");
+                        producto["Precio"] = Convert.ToDecimal(Console.ReadLine()!);
+
+                        Console.WriteLine("Producto actualizado.\n");
+                        encontrado = true;
+                        break;
+                    }
+                }
+
+                if (!encontrado)
+                {
+                    Console.WriteLine("Producto no encontrado.\n");
+                }
+            }
+            else if (opcion == "4")
+            {
+                Console.Write("Ingrese el ID del producto a eliminar: ");
+                int idEliminar = Convert.ToInt32(Console.ReadLine());
+
+                int index = -1;
+                for (int i = 0; i < productos.Count; i++)
+                {
+                    if ((int)productos[i]["Id"] == idEliminar)
+                    {
+                        index = i;
+                        break;
+                    }
+                }
+
+                if (index != -1)
+                {
+                    productos.RemoveAt(index);
+                    Console.WriteLine("Producto eliminado.\n");
+                }
+                else
+                {
+                    Console.WriteLine("Producto no encontrado.\n");
+                }
+            }
+            else if (opcion == "5")
+            {
+                Console.WriteLine("Saliendo del programa...");
+                break;
+            }
+            else
+            {
+                Console.WriteLine("Opción inválida.\n");
+            }
+        }
+ 
+```
+
+
+## Ejemplo de codigo monolito con clase y metodos:
 ```cs
 //Program.cs
 using System;
