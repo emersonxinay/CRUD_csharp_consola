@@ -1,0 +1,14 @@
+E:\csharp\crud1\bin\Debug\net9.0\crud1.exe
+E:\csharp\crud1\bin\Debug\net9.0\crud1.deps.json
+E:\csharp\crud1\bin\Debug\net9.0\crud1.runtimeconfig.json
+E:\csharp\crud1\bin\Debug\net9.0\crud1.dll
+E:\csharp\crud1\bin\Debug\net9.0\crud1.pdb
+E:\csharp\crud1\obj\Debug\net9.0\crud1.GeneratedMSBuildEditorConfig.editorconfig
+E:\csharp\crud1\obj\Debug\net9.0\crud1.AssemblyInfoInputs.cache
+E:\csharp\crud1\obj\Debug\net9.0\crud1.AssemblyInfo.cs
+E:\csharp\crud1\obj\Debug\net9.0\crud1.csproj.CoreCompileInputs.cache
+E:\csharp\crud1\obj\Debug\net9.0\crud1.dll
+E:\csharp\crud1\obj\Debug\net9.0\refint\crud1.dll
+E:\csharp\crud1\obj\Debug\net9.0\crud1.pdb
+E:\csharp\crud1\obj\Debug\net9.0\crud1.genruntimeconfig.cache
+E:\csharp\crud1\obj\Debug\net9.0\ref\crud1.dll
